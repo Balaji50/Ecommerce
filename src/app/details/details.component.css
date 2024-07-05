@@ -1,0 +1,46 @@
+.detail_img {
+  margin-top: 8%;
+}
+
+.detail_img img {
+  width: 100%;
+  height: 350px;
+  border-radius: 5px;
+}
+
+.detail_btn {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+}
+
+.detail_btn button {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.detail_btn .btn1 {
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+}
+
+.detail_btn .btn2 {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+}
+
+.detail_titles {
+  margin-top: 14%;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.detail_titles li {
+  list-style: none;
+  text-align: left;
+}

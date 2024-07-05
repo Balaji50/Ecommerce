@@ -1,0 +1,45 @@
+<section id="section-container">
+    <div class="container" id="Heading-Container">
+
+    </div>
+
+    <div class="container-fluid" id="cartContainer">
+
+        <div class="headingImage">
+            <img src="/assets/images/laptopdiscount.png" alt="">
+        </div>
+
+        <div class="titleHeading">
+            <p>
+                <span class="text-danger">BrandNew</span> Laptops
+            </p>
+        </div>
+
+        <div class="row cart-row">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-12 cart-col" *ngFor="let product of productitems">
+                <div class="cart-holder">
+                    <div class="cart-img">
+                        <img class="card-img-top" src="{{product.thumbnail}}" alt="">
+                    </div>
+                    <div class="cart-body">
+                        <p class="cart-brandName">
+                            {{product.brand}}
+                        </p>
+                        <p class="Description">
+                            {{product.description}}
+                        </p>
+                        <p>
+                            Price: ${{product.price}}
+                        </p>
+                        <p>
+                            rate:{{product.rating}}
+                        </p>
+                        <span class="cart-btn">
+                            <button type="button" (click)="addtocart(product)">add cart</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

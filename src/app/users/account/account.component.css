@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.accountPage{
+    padding-top: 120px;
+}
+.accountPage ul{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    list-style: none;
+    margin-top: 6px;
+}
+.accountPage ul li{
+    border: 1px solid;
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 10px;
+}
+#account-container{
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    width: 100vw;
+    height:100vh;
+}
+.accountLogo{
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: 100;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="customerDetails">
+        <h4>Delivery Address</h4>
+        <ul>
+            <li><strong>Name:</strong>{{receviewData.name}}</li>
+            <li><strong>Email:</strong>{{receviewData.email}}</li>
+            <li><strong>Mobile No:</strong>{{receviewData.mobileno}}</li>
+            <li><strong>Flat No:</strong> {{receviewData.flatno}}</li>
+            <li><strong>City:</strong> {{receviewData.city}}</li>
+            <li><strong>State:</strong> {{receviewData.state}}</li>
+            <li><strong>Pincode:</strong> {{receviewData.pincode}}</li>
+        </ul>
+
+        <div class="Buttons">
+            <button class="bg-success" type="button">continue</button>
+            <button (click)="backToEdit()" class="bg-primary" type="button">Edit Address</button>
+        </div>
+    </div>
+</div>

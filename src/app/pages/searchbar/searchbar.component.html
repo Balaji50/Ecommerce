@@ -1,0 +1,15 @@
+<div class="container-fluid " id="search-container">
+
+  <div class="input-search mx-auto" (click)="parentDiv()">
+    <div class="bar">
+      <input type="text" (click)="childDiv($event)" [(ngModel)]="searchTerm" placeholder="Search products"
+        (input)="onSearch()">
+
+      <div class="product-list" (click)="childDiv($event)">
+        <div routerLink="/details/{{product.id}}" *ngFor="let product of filteredProducts">
+         <a routerLink="/details/{{product.id}}"  (click)="parentDiv()">{{ product.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

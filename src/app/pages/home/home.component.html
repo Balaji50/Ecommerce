@@ -1,0 +1,151 @@
+<section id="sectionContainer">
+
+
+    <!-- product icons-container -->
+    <div class="container mx-auto" id="product-icons">
+        <div>
+            <ul class="product-icon text-capitalize fs-5-sm">
+                <li>
+                    <a (click)="navigateMobile()">
+                        <img src="assets/images/mobile.png" alt="">
+                        <div class="text-center">
+                            mobile
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/laptoppage">
+                        <img src="assets/images/laptop.png" alt="">
+                        <div class="text-center">
+                            laptop
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/menfashion">
+                        <img src="assets/images/men.png" alt="">
+                        <div class="text-center">
+                            men
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/womenfashion">
+                        <img src="assets/images/women.png" alt="">
+                        <div class="text-center">
+                            women
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/offerpage">
+                        <img src="assets/images/offer.png" alt="">
+                        <div class="text-center">
+                            offers
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- carouse-container -->
+    <div class="carousel-container">
+        <div class="container-md mx-auto mt-3 shadow rounded-5 ">
+            <ngb-carousel id="carousel-container" NgbCarousel.interval:100>
+                <ng-template ngbSlide id="carousel-container">
+                    <div class="picsum-img-wrapper">
+                        <img src="assets/images/offer2.png" alt="Responsive image">
+                    </div>
+                    <div class="carousel-caption">
+
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img src="assets/images/fashionbanner.png" alt="Responsive image">
+                    </div>
+                    <div class="carousel-caption">
+
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img src="assets/images/newarival.png" alt="Responsive image">
+                    </div>
+                    <div class="carousel-caption">
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+
+    </div>
+    <div class="best-seller">
+        <p class="text-warning">Best <span class="text-dark seller">Seller</span></p>
+    </div>
+
+    <!-- card-container -->
+    <div id="card-container" class="container  mx-auto bg-white">
+        <div class="card-items">
+            <div class="container mx-auto">
+                <div class="row ">
+                    <div class="col-lg-3 col-md-3 col-6" *ngFor="let product of getitems" id="card-items">
+                        <div class="card">
+                            
+                                <img src="{{product.image}}" class="card-img-top" alt="">
+                           
+                            
+                            <div class="card-body text-center">
+                                <p class="card-title">
+                                    {{product.title}}
+                                </p>
+                                 <span>
+                                    price: ${{product.price}}
+                                 </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- best offer -->
+    <div id="offer-container" class="container  mx-auto ">
+        <span>
+            <h1 class="seller"> <span class="text-danger">Best</span> Offer</h1>
+        </span>
+        <div class="best-offer">
+            <div class="container mx-auto">
+                <div class="row ">
+                    <div class="col-lg-3 col-md-3 col-6" *ngFor="let offer of getitems2" id="offer-items">
+                        <div class="card">
+                            <img routerLink="/details/{{offer.id}}" src="{{offer.thumbnail}}" class="card-img-top" alt="">
+                            <div class="card-body offer-titles">
+                                <p class="offer-title">
+                                    {{offer.title}}
+                                </p>
+                                
+                                    <span class="price">Price:${{offer.price}}</span>
+                                    <button type="button" (click)="addtocart(offer)">Add Cart</button>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="container mt-5 mb-5 mx-auto">
+    <div class="offerImage">
+        <img src="assets/images/offer1.png" alt="offerimg">
+    </div>
+   </div>
+  
+</section>

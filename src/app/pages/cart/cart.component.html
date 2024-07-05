@@ -1,0 +1,154 @@
+<ng-container *ngIf="product.length==0; then noItemInCart; else itemInCart">
+
+</ng-container>
+
+<ng-template #itemInCart>
+    <div class="container-fluid ms-1" id="tableContainer">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-8 tableCol">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>product</th>
+                            <th>Brand</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <!-- <th>Total</th> -->
+                            <th>remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let items of product">
+                            <td><img routerLink="/details/{{items.id}}" src="{{items.thumbnail}}" alt=""></td>
+                            <td>{{items.title}}</td>
+                            <td class="Description">{{items.description}}</td>
+                            <td>${{items.price}}</td>
+                            <td>${{items.discountPercentage}}</td>
+                            <td class="deleteButton">
+                                <button (click)="removeItems(items)" type="button"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr class="cart-buttons">
+                            <td colspan="3"></td>
+                            <td class="p-2 cartButton">
+                                <button (click)="emptyCart()" type="button">clear cart</button>
+                            </td>
+                            <td class="p-2 checkButton">
+                                <button (click)="checkOut()" type="button">check out</button>
+                            </td>
+                            <!-- <td class="p-3  total"><strong>Total: ${{grandTotal}}</strong></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Price Details -->
+            <div class="col-sm-12 col-md-12 col-lg-4 priceContainer">
+                <div class="price_details">
+                    <div class="price">
+                        <h5>price details</h5>
+                    </div>
+                    <div class="price_items">
+                        <p>price({{productItems}})items:</p>
+                        <p> ${{grandTotal}}</p>
+                    </div>
+                    <div class="delivery">
+                        <p>delivery charges:</p>
+                        <p><span>90</span> free</p>
+                    </div>
+                    <div class="total_price">
+                        <p>
+                            <strong>total price:</strong>
+                        </p>
+                        <p>${{grandTotal}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ng-template>
+
+
+<ng-template #noItemInCart>
+    <div class="container" id="cart-Loader">
+        <div class="empty-Cart">
+            <span>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </span>
+            <span class="mt-3 text-center cart-text">
+                <h3>your cart is empty</h3>
+                <h3>shop now</h3>
+            </span>
+            <span>
+                <button routerLink="/home" type="button">Go To Shope</button>
+            </span>
+        </div>
+    </div>
+</ng-template>
+
+
+<!-- mobile responsive -->
+<ng-container *ngIf="product.length==0;else mobileCart">
+
+</ng-container>
+<ng-template #mobileCart>
+    <div class="mobileCartContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 product-container" *ngFor="let items of product">
+                    <span class="mobileCartImg">
+                        <img src="{{items.thumbnail}}" alt="">
+                    </span>
+                    <div class="mobileDetails">
+                        <p>
+                            {{items.brand}}
+                        </p>
+                        <p class="mobileDescription">
+                            {{items.description}}
+                        </p>
+                        <p>
+                            price: ${{items.price}}
+                        </p>
+                        <div class="mobileCartButton">
+                            <button type="button" (click)="removeItems(items)">remove</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-4 mobpriceContainer">
+                    <div class="price_details">
+                        <div class="price">
+                            <h5>price details</h5>
+                        </div>
+                        <div class="price_items">
+                            <p>price({{productItems}})items:</p>
+                            <p> ${{grandTotal}}</p>
+                        </div>
+                        <div class="delivery">
+                            <p>delivery charges:</p>
+                            <p><span>90</span> free</p>
+                        </div>
+                        <div class="total_price">
+                            <p>
+                                <strong>total price:</strong>
+                            </p>
+                            <p>${{grandTotal}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobButton">
+                    <button class="btn1" (click)="emptyCart() " type="button">clear cart</button>
+                    <button class="btn3" (click)="checkOut()" type="button">checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

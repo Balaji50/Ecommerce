@@ -1,0 +1,111 @@
+<!-- navbar -->
+<header>
+    <nav class="container-fluid d-flex justify-content-between py-3 shadow fixed-top" id="nav-container">
+        <div class="brand-name">
+            <a routerLink="home" class="navbar-brand ms-5 ">ShopKaro</a>
+        </div>
+        <!-- Search Bar -->
+        <div id="mobileSearchBar">
+            <ul>
+                <li class="text-center" (click)="onClickSearchBar()">
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="list-items me-5">
+            <ul>
+                <li class="text-center" (click)="onClickSearchBar()" id="Search-Bar">
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </li>
+
+                <li>
+                    <a routerLink="home"><i class="fa-solid fa-house me-1"></i>Home</a>
+                </li>
+                <ng-container *ngIf="this.auth.isAthenticated(); then Authentication;else notAthentication">
+
+                </ng-container>
+                <ng-template #Authentication>
+                    <li class="dropdownli">
+                        <a (click)="dropDown()">
+                            Account
+                        </a>
+                        <ul class="dropdownul"*ngIf="list">
+                            <li>
+                                <a (click)="logOut()" (click)="dropDown()">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>
+
+                <ng-template #notAthentication>
+                    <li class="dropdownli">
+                        <a (click)="dropDown()">
+                            Account
+                        </a>
+                        <ul class="dropdownul" *ngIf="list">
+                            <li>
+                                <a (click)="navigateLogin()" (click)="dropDown()">Login</a>
+                            </li>
+                            <li>
+                                <a (click)="navigateRegister()" (click)="dropDown()">Register</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>
+
+                <li>
+                    <a routerLink="cart"><i class="fa-solid fa-cart-shopping me-1"></i>Cart
+                        <span class="badge" *ngIf="totalCartItems > 0">{{totalCartItems}}</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- search bar -->
+    <div *ngIf="searchBarisOpen()">
+        <app-searchbar></app-searchbar>
+    </div>
+
+    <!-- mobile Responsive nave -->
+    <div class="mobileNav">
+        <div class="container-fluid">
+            <div class="mobileNavList">
+                <ul>
+                    <li>
+                        <a routerLink="home"><i class="fa-solid fa-house  d-block text-center"></i> home</a>
+                    </li>
+                    <li>
+                        <a routerLink="users/account"><i class="fa-solid fa-user  d-block text-center"></i> account</a>
+                    </li>
+                    <li class="cart-icon">
+                        <a routerLink="cart">
+                            <i class="fa-solid fa-cart-shopping d-block text-center"></i> Cart
+                            <span class="badge bg-danger" *ngIf="totalCartItems > 0">{{totalCartItems}}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a routerLink="#"><i class="fa-solid fa-tags d-block text-center"></i> offer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- responsive nav toggal -->
+    <!-- <div class="contianer" id="responsive-toggle" *ngIf="hiddenNavBar">
+        <div class="mobile-Nav">
+            <ul>
+                <li (click)="navigateLogin()">login</li>
+                <li (click)="navigateRegister()">register</li>
+            </ul>
+        </div>
+    </div> -->
+</header>

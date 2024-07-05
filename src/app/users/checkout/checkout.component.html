@@ -1,0 +1,75 @@
+<div class="container" id="header">
+    <div class="row rowContainer">
+        <div class="col-md-7 colContainer">
+            <form class="form-group" [formGroup]="myform">
+                <div>
+                    <label for="name" class="form-lable">Name:</label>
+                    <input formControlName="name" type="text" name="name" id="name"  class="form-control">
+                </div>
+
+                <div>
+                    <label for="email" class="form-lable">Email:</label>
+                    <input formControlName="email" type="eamil" name="email" id="email" class="form-control">
+                </div>
+
+                <div>
+                    <label for="mobileno" class="form-lable">Mobile No:</label>
+                    <input formControlName="mobileno" type="number" name="mobileno" id="mobileno" class="form-control">
+                </div>
+
+                <div>
+                    <label for="flatno" class="form-lable">FlateNo:</label>
+                    <input formControlName="flatno" type="text" name="flatno" id="flatno" class="form-control">
+                </div>
+
+                <div class="addressDetails">
+                    <div>
+                        <label for="city" class="form-lable">City:</label>
+                        <input formControlName="city" type="text" name="city" id="city" class="form-control">
+                    </div>
+
+                    <div>
+                        <label for="state" class="form-lable">State:</label>
+                        <input formControlName="state" type="text" name="state" id="state" class="form-control">
+                    </div>
+
+                    <div>
+                        <label for="pincode" class="form-lable">PinCode:</label>
+                        <input formControlName="pincode" type="text" name="pincode" id="pincode" class="form-control">
+                    </div>
+                </div>
+
+                <div class="buttonDetails">
+                    <button class="btn1" type="button" [disabled]="myform.invalid" (click)="onSubmit(myform.value)" (click)="payMentDetails()">place order</button>
+                    <button routerLink="/cart" class="btn2" type="button">cancle</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <!-- Price detials -->
+        <div class="col-md-4" id="priceContainer">
+            <div class="priceDetails">
+                <div class="details">
+                    <p>price details</p>
+                </div>
+
+                <div class="items">
+                    <p>price({{totalItems}})items:</p>
+                    <p>${{grandTotal}}</p>
+                </div>
+
+                <div class="delivery">
+                    <p>delivery charges:</p>
+                    <p><span class="free">${{85}}</span>   FREE</p>
+                </div>
+
+                <div class="total">
+                    <p>total amount:</p>
+                    <p>${{grandTotal}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

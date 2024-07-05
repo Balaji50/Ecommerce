@@ -1,0 +1,23 @@
+<div class="container-fluid" id="account-container">
+    <div class="accountPage">
+        <span class="accountLogo">
+            <i class="fa-solid fa-user"></i>
+        </span>
+        <ng-container *ngIf="this.auth.isAthenticated();then Authenticated; else notAuthenticated ">
+          
+        </ng-container>
+
+        <ng-template #notAuthenticated>
+            <ul>
+                <li (click)="navigateLogin()">Login</li>
+                <li (click)="navigateRegister()">Register</li>
+            </ul>
+        </ng-template>
+
+        <ng-template #Authenticated>
+            <ul>
+                <li (click)="onLogout()">Logout</li>
+            </ul>
+        </ng-template>
+    </div>
+</div>

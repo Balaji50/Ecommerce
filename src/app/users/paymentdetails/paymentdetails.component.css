@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customerDetails {
+    margin-top: 90px;
+    border-radius: 5px;
+    width: 50%;
+    align-items: center;
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.customerDetails h4 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.customerDetails ul {
+    padding-top: 20px;
+    list-style: none;
+}
+
+.customerDetails ul li {
+    display: flex;
+    text-align: left;
+    column-gap: 20px;
+}
+
+.customerDetails ul li {
+    padding-top: 10px;
+}
+
+.Buttons {
+    display: flex;
+    justify-content: end;
+    column-gap: 30px;
+    padding: 10px;
+}
+
+.Buttons button {
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* mobile responsive */
+@media(max-width:426px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .customerDetails {
+        margin-top: 70px;
+        margin-bottom: 50px;
+        border-radius: 5px;
+        width: 100%;
+        align-items: center;
+        box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .customerDetails h4 {
+        text-align: center;
+        padding-top: 10px;
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .customerDetails ul {
+        padding-top: 15px;
+        list-style: none;
+    }
+
+    .customerDetails ul li {
+        display: flex;
+        text-align: left;
+        column-gap: 20px;
+    }
+
+    .customerDetails ul li {
+        padding-top: 10px;
+    }
+
+    .Buttons {
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+        padding: 10px;
+    }
+
+    .Buttons button {
+        border: none;
+        padding: 3px;
+        color: white;
+        border-radius: 5px;
+        text-transform: capitalize;
+        font-size: 12px;
+    }
+}

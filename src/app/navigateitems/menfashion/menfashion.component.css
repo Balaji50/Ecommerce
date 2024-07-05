@@ -1,0 +1,198 @@
+#cartContainer {
+    text-transform: capitalize;
+    align-items: center;
+    width: 100%;
+    margin-top: 75px;
+}
+
+.titleHeading {
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 30px;
+    letter-spacing: 3px;
+}
+
+.headingImage {
+    display: flex;
+    justify-content: center;
+}
+
+.headingImage img {
+    height: 85vh;
+    width: 100vw;
+    /* border-radius: 10px;
+    box-shadow: 5px 5px 10px 8px rgba(0, 0, 0, 0.3); */
+}
+
+.cart-row {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    /* padding: 18px; */
+    align-items: center;
+    text-transform: capitalize;
+    display: flex;
+    margin: 0;
+}
+
+.cart-col {
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    text-transform: capitalize;
+}
+
+.cart-img img {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-img img:hover {
+    transform: scale(1.1);
+}
+
+
+.cart-body {
+    padding-left: 30px;
+    padding-top: 18px;
+    line-height: 10px;
+    color: black;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.cart-body .Description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 15ch;
+    line-height: 12px;
+}
+
+.cart-brandtitle{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 15ch;
+}
+
+.cart-brandName {
+    font-size: 20px;
+}
+
+.cart-holder {
+    display: flex;
+   background-color: gainsboro;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cart-btn button {
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 7px;
+    background-color: rgb(241, 223, 128);
+}
+
+
+/* mobile responsive */
+@media(max-width:426px) {
+    .titleHeading {
+        display: none;
+    }
+
+    .headingImage {
+        display: none;
+    }
+
+    #cartContainer {
+        display: flex;
+        justify-content: center;
+        text-transform: capitalize;
+        align-items: center;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .cart-row {
+        width: 100%;
+        margin-top: 59px;
+        margin-bottom: 50px;
+        padding: 11px;
+        border: none;
+        align-items: center;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cart-col {
+        display: flex;
+        justify-content: center;
+        padding: 6px;
+        text-transform: capitalize;
+    }
+
+    .cart-holder {
+        display: flex;
+        background: none;
+        padding: 15px;
+        padding-left: 33px;
+        padding-top: 15px;
+        padding-right: 20px;
+        /* background-image: url(/assets/images/mobilebackground3.jpg); */
+        background-color: aliceblue;
+    }
+
+    .cart-img img {
+        width: 117px;
+        height: 110px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .cart-img img:hover {
+        transform: scale(1.1);
+    }
+
+    .cart-body {
+        padding-left: 25px;
+        line-height: 10px;
+        color: black;
+        font-weight: bold;
+        font-size: 12px;
+        padding-top: 5px;
+    }
+
+    .cart-brandName {
+        font-size: 15px;
+    }
+
+    .cart-body .Description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 15ch;
+        line-height: 12px;
+    }
+
+    .cart-btn button {
+        border: none;
+        border-radius: 5px;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 5px;
+        background-color: orange;
+    }
+
+    .cart-btn {
+        display: flex;
+        justify-content: end;
+    }
+}

@@ -1,0 +1,252 @@
+.rowContainer {
+    margin-top: 90px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.colContainer {
+   background-color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.colContainer form {
+    width: 100%;
+}
+
+.colContainer form div {
+    margin-top: 10px;
+}
+
+form:focus input{
+    outline: none;
+}
+
+#priceContainer {
+    align-items: center;
+    background-color: antiquewhite;
+    height: 270px;
+}
+
+.addressDetails {
+    display: flex;
+    column-gap: 7px;
+}
+
+.buttonDetails {
+    display: flex;
+    column-gap: 30px;
+    text-transform: capitalize;
+    justify-content: end;
+}
+
+.buttonDetails button {
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    padding: 8px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.btn1 {
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    color: white;
+}
+
+.btn1:hover{
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn2 {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    color: white;
+}
+
+.btn2:hover{
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* price Details */
+#priceContainer {
+    position: sticky;
+    top: 70px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.details p {
+    padding: 10px;
+    border-bottom: 1px solid;
+    font-weight: bold;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.items p {
+    padding: 10px;
+}
+
+.free {
+    text-decoration: line-through;
+}
+
+.delivery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery p {
+    padding: 10px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid;
+    align-items: center;
+}
+
+.total p {
+    padding: 10px;
+}
+
+
+/* mobileResponsive */
+@media(max-width:426px){
+    .rowContainer {
+        margin-top: 70px;
+        margin-bottom: 70px;
+        text-transform: capitalize;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .colContainer {
+       background-color: white;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+        box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.5);
+    }
+    
+    .colContainer form {
+        width: 100%;
+    }
+    
+    .colContainer form div {
+        margin-top: 10px;
+    }
+    
+    
+    #priceContainer {
+        align-items: center;
+        background-color: antiquewhite;
+        height: 270px;
+    }
+    
+    .addressDetails {
+        display:inline-block;
+        column-gap: normal;
+    }
+    
+    .buttonDetails {
+        display: flex;
+        column-gap: 10px;
+        text-transform: capitalize;
+        justify-content: end;
+    }
+    
+    .buttonDetails button {
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        padding: 8px;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 10px;
+    }
+    
+    .btn1 {
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        color: white;
+    }
+    
+    .btn2 {
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        color: white;
+    }
+    
+    
+    
+    /* price Details */
+    #priceContainer {
+        position: sticky;
+        top: 70px;
+        border-radius: 5px;
+        background-color: #f0e6ce;
+        box-shadow: none;
+        margin-top: 20px;
+    }
+    
+    .details p {
+        padding: 10px;
+        border-bottom: 1px solid;
+        font-weight: bold;
+    }
+    
+    .items {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+    
+    .items p {
+        padding: 10px;
+    }
+    
+    .free {
+        text-decoration: line-through;
+    }
+    
+    .delivery {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .delivery p {
+        padding: 10px;
+    }
+    
+    .total {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        border-top: 1px solid;
+        align-items: center;
+    }
+    
+    .total p {
+        padding: 10px;
+    }
+    
+}

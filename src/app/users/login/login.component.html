@@ -1,0 +1,55 @@
+<section class="section-container">
+
+    <!-- image div -->
+    <div class="leftContainer">
+        <img src="/assets/images/login12.png" alt="">
+    </div>
+
+    <div class="contianer-fluid" id="form-container">
+        <div class="login">
+            <h1>Login</h1>
+        </div>
+        <form #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmite()">
+
+            <div class="mb-4 input">
+                <label for="exampleInputEmail1" class="form-label">Email address:</label>
+                <input type="email" class="form-control" name="email" id="" placeholder="email"
+                    [(ngModel)]="formdata.email" #email="ngModel" required>
+                <span class="text-danger" *ngIf="this.submit&&email.errors?.['required']">
+                    Required Email
+                </span>
+            </div>
+            <div class="mb-4 password">
+                <label for="exampleInputPassword1" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="inputPassword1" placeholder="Enter Password"
+                    name="password" [(ngModel)]="formdata.password" #password="ngModel" required minlength="8">
+                <span class="text-danger" *ngIf="this.submit&&password.errors?.['required']">
+                    Required Password
+                </span>
+                <span class="text-danger" *ngIf="this.submit&&password.errors?.['minlength']">
+                    Minimum password lenght 8 character
+                </span>
+                <span class="text-danger d-block" *ngIf="this.errorMessage">
+                    <p [innerText]="this.errorMessage"> </p>
+                </span>
+            </div>
+            <span class="mb-2 text-danger">
+                <p></p>
+            </span>
+
+            <div class="loadingIcon">
+                <span><i class="fas fa-spinner fa-spin text-center" *ngIf="this.loadingIcon"></i></span>
+            </div>
+
+            <div class="loginButton">
+                <button type="submit" [disabled]="this.loadingIcon" (click)="submit=true">Login</button>
+            </div>
+        </form>
+
+        <div class="alreadyAccount">
+            <p>Create new account?<span class="alreadyLogin" (click)="navigateRegister()">
+                    Register</span></p>
+        </div>
+    </div>
+
+</section>
